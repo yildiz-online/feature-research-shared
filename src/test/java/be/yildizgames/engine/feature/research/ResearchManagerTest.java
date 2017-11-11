@@ -24,9 +24,7 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.id.ActionId;
 import be.yildiz.common.id.PlayerId;
-import be.yildiz.shared.entity.bonus.BonusSpeed;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -48,7 +46,7 @@ class ResearchManagerTest {
 
         @Test
         void noPrerequisite() {
-            Research.createAndRegister(ResearchId.valueOf(2),10, new BonusSpeed(1, ActionId.valueOf(1)));
+            Research.createAndRegister(ResearchId.valueOf(2),10, BonusId.valueOf(1));
             assertEquals(ResearchManager.ResearchState.AVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(2), ResearchId.valueOf(2)));
         }
 
@@ -59,16 +57,16 @@ class ResearchManagerTest {
 
         @Test
         void prerequisiteDone() {
-            Research.createAndRegister(ResearchId.valueOf(4),10, new BonusSpeed(1, ActionId.valueOf(1)));
-            Research.createAndRegister(ResearchId.valueOf(5),10, new BonusSpeed(1, ActionId.valueOf(1)), ResearchId.valueOf(4));
+            Research.createAndRegister(ResearchId.valueOf(4),10, BonusId.valueOf(1));
+            Research.createAndRegister(ResearchId.valueOf(5),10, BonusId.valueOf(1), ResearchId.valueOf(4));
             ResearchManager.getInstance().addResearch(ResearchId.valueOf(4), PlayerId.valueOf(5));
             assertEquals(ResearchManager.ResearchState.AVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(5), ResearchId.valueOf(5)));
         }
 
         @Test
         void prerequisiteNotDone() {
-            Research.createAndRegister(ResearchId.valueOf(6),10, new BonusSpeed(1, ActionId.valueOf(1)));
-            Research.createAndRegister(ResearchId.valueOf(7),10, new BonusSpeed(1, ActionId.valueOf(1)), ResearchId.valueOf(6));
+            Research.createAndRegister(ResearchId.valueOf(6),10, BonusId.valueOf(1));
+            Research.createAndRegister(ResearchId.valueOf(7),10, BonusId.valueOf(1), ResearchId.valueOf(6));
             assertEquals(ResearchManager.ResearchState.UNAVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(6), ResearchId.valueOf(7)));
         }
 

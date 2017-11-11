@@ -46,7 +46,7 @@ public final class Research {
     /**
      * Bonus obtained the this be.yildizgames.engine.feature.research is done.
      */
-    private final EntityBonus bonus;
+    private final BonusId bonus;
 
     /**
      * Research price.
@@ -61,7 +61,7 @@ public final class Research {
     private final ResearchId id;
 
 
-    private Research(final ResearchId id, final float researchPrice, final EntityBonus bonus, final ResearchId prerequisite) {
+    private Research(final ResearchId id, final float researchPrice, final BonusId bonus, final ResearchId prerequisite) {
         super();
         this.prerequisite = prerequisite;
         this.price = GameResources.research(researchPrice);
@@ -77,7 +77,7 @@ public final class Research {
      * @return The created be.yildizgames.engine.feature.research.
      */
     //@effects Create a new Research with no prerequisite.
-    public static Research createAndRegister(final ResearchId id, final float price, final EntityBonus bonus) {
+    public static Research createAndRegister(final ResearchId id, final float price, final BonusId bonus) {
         return new Research(id, price, bonus, null);
     }
 
@@ -89,7 +89,7 @@ public final class Research {
      * @return The created be.yildizgames.engine.feature.research.
      */
     //@effects Create a new Research with a prerequisite.
-    public static Research createAndRegister(final ResearchId id, final float price, final EntityBonus bonus, final ResearchId prerequisite) {
+    public static Research createAndRegister(final ResearchId id, final float price, final BonusId bonus, final ResearchId prerequisite) {
         return new Research(id, price, bonus, prerequisite);
     }
 
@@ -103,7 +103,7 @@ public final class Research {
         return Research.REGISTERER.get(id);
     }
 
-    public EntityBonus getBonus() {
+    public BonusId getBonus() {
         return bonus;
     }
 

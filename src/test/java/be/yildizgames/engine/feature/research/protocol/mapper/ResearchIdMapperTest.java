@@ -24,8 +24,9 @@
 
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildiz.module.network.protocol.mapper.BaseMapperTest;
-import be.yildiz.shared.research.ResearchId;
+
+import be.yildizgames.common.mapping.BaseMapperTest;
+import be.yildizgames.engine.feature.research.ResearchId;
 
 /**
  * @author Grégory Van den Borre

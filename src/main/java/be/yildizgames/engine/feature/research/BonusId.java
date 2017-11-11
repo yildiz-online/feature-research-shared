@@ -22,19 +22,20 @@
  *
  */
 
-package be.yildizgames.engine.feature.research.protocol.mapper;
+package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.id.EntityId;
-import be.yildizgames.common.mapping.BaseMapperTest;
-import be.yildizgames.engine.feature.research.ResearchId;
-import be.yildizgames.engine.feature.research.protocol.ResearchDto;
+import be.yildiz.common.ValueObject;
 
 /**
  * @author Grégory Van den Borre
  */
-public class ResearchDtoMapperTest extends BaseMapperTest<ResearchDto> {
+public class BonusId extends ValueObject {
 
-    public ResearchDtoMapperTest() {
-        super(ResearchDtoMapper.getInstance(), new ResearchDto(ResearchId.valueOf(3), EntityId.valueOf(4)));
+    private BonusId(int value) {
+        super(value);
+    }
+
+    public static BonusId valueOf(final int value) {
+        return new BonusId(value);
     }
 }
