@@ -24,10 +24,10 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.collections.Lists;
-import be.yildiz.common.collections.Maps;
-import be.yildiz.common.collections.Sets;
-import be.yildiz.common.id.PlayerId;
+import be.yildizgames.common.collection.Lists;
+import be.yildizgames.common.collection.Maps;
+import be.yildizgames.common.collection.Sets;
+import be.yildizgames.common.model.PlayerId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

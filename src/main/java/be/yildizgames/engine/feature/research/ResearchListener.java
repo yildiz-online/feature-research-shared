@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.id.PlayerId;
+import be.yildizgames.common.model.PlayerId;
 
 /**
  * Listener notified when a be.yildizgames.engine.feature.research even occurs.

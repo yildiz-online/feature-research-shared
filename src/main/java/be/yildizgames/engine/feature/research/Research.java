@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.collections.Maps;
+import be.yildizgames.common.collection.Maps;
 import be.yildizgames.engine.feature.resource.GameResources;
 import be.yildizgames.engine.feature.resource.ResourceValue;
 

@@ -24,7 +24,8 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildiz.common.ValueObject;
+
+import be.yildizgames.common.util.ValueObject;
 
 /**
  * @author Grégory Van den Borre

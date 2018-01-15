@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.research.protocol;
 
-import be.yildiz.common.id.EntityId;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.research.ResearchId;
 
 /**
