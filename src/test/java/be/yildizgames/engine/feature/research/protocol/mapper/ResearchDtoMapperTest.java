@@ -24,8 +24,8 @@
 
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildiz.common.id.EntityId;
 import be.yildizgames.common.mapping.BaseMapperTest;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.research.ResearchId;
 import be.yildizgames.engine.feature.research.protocol.ResearchDto;
 
