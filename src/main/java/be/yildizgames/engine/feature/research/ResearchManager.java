@@ -27,23 +27,21 @@ package be.yildizgames.engine.feature.research;
 import be.yildizgames.common.collection.Lists;
 import be.yildizgames.common.collection.Maps;
 import be.yildizgames.common.collection.Sets;
+import be.yildizgames.common.logging.LogFactory;
 import be.yildizgames.common.model.PlayerId;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-//FIXME use an object PlayerResearch instead of a manager
-
 /**
  * @author Grégory Van den Borre
  */
 public final class ResearchManager {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ResearchManager.class);
+    private static final Logger LOGGER = LogFactory.getInstance().getLogger(ResearchManager.class);
 
     private static final ResearchManager INSTANCE = new ResearchManager();
 
@@ -63,10 +61,10 @@ public final class ResearchManager {
     }
 
     /**
-     * Add a new be.yildizgames.engine.feature.research.
+     * Add a research.
      *
      * @param res    Research to add.
-     * @param player Player doing the be.yildizgames.engine.feature.research.
+     * @param player Player doing the research.
      */
     public void addResearch(final ResearchId res, final PlayerId player) {
         this.researches.putIfAbsent(player, Sets.newSet());
@@ -80,7 +78,7 @@ public final class ResearchManager {
     }
 
     /**
-     * Add a listener for be.yildizgames.engine.feature.research event.
+     * Add a listener for research event.
      *
      * @param listener Listener to add.
      */
@@ -89,11 +87,11 @@ public final class ResearchManager {
     }
 
     /**
-     * Retrieve the be.yildizgames.engine.feature.research state for a given be.yildizgames.engine.feature.research.
+     * Retrieve the research state for a given research.
      *
      * @param player Player to check.
      * @param id Research to check.
-     * @return The state of the given be.yildizgames.engine.feature.research.
+     * @return The state of the given research.
      */
     public ResearchState getResearchState(final PlayerId player, final ResearchId id) {
         this.researches.putIfAbsent(player, Sets.newSet());
@@ -103,7 +101,7 @@ public final class ResearchManager {
         }
         Research research = Research.get(id);
         if(research == null) {
-            LOGGER.warn("Research " + id + " not registered.");
+            LOGGER.warn("Research {} not registered.", id);
             return ResearchState.UNAVAILABLE;
         }
         if (!research.getPrerequisite().isPresent()) {
@@ -116,10 +114,10 @@ public final class ResearchManager {
     }
 
     /**
-     * Check if a given player has a be.yildizgames.engine.feature.research complete.
+     * Check if a given player has a research complete.
      * @param player Player to check.
      * @param res Research to check.
-     * @return <code>true</code> If the given player has completed to given be.yildizgames.engine.feature.research.
+     * @return <code>true</code> If the given player has completed to given research.
      */
     public boolean hasResearch(final PlayerId player, final ResearchId res) {
         return this.researches.putIfAbsent(player, Sets.newSet()).contains(res);
@@ -135,7 +133,7 @@ public final class ResearchManager {
     }
 
     /**
-     * State of a be.yildizgames.engine.feature.research for a player.
+     * State of a research for a player.
      *
      * @author Van den Borre Grégory
      */
