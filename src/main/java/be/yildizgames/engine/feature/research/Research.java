@@ -25,14 +25,12 @@
 package be.yildizgames.engine.feature.research;
 
 import be.yildizgames.common.collection.Maps;
-import be.yildizgames.engine.feature.resource.GameResources;
-import be.yildizgames.engine.feature.resource.ResourceValue;
 
 import java.util.Map;
 import java.util.Optional;
 
 /**
- * Contains the data for a be.yildizgames.engine.feature.research.
+ * Contains the data for a research.
  *
  * @author Grégory Van den Borre
  */
@@ -44,14 +42,14 @@ public final class Research {
     private static final Map<ResearchId, Research> REGISTERER = Maps.newMap();
 
     /**
-     * Bonus obtained the this be.yildizgames.engine.feature.research is done.
+     * Bonus obtained the this research is done.
      */
     private final BonusId bonus;
 
     /**
      * Research price.
      */
-    private final ResourceValue price;
+    private final float price;
 
     /**
      * Research needed to be done before making this one, optional. none.
@@ -64,7 +62,7 @@ public final class Research {
     private Research(final ResearchId id, final float researchPrice, final BonusId bonus, final ResearchId prerequisite) {
         super();
         this.prerequisite = prerequisite;
-        this.price = GameResources.research(researchPrice);
+        this.price = researchPrice;
         this.bonus = bonus;
         this.id = id;
         REGISTERER.put(id, this);
@@ -73,8 +71,8 @@ public final class Research {
     /**
      * @param id  Research unique id.
      * @param price Research price.
-     * @param bonus Bonus received when this be.yildizgames.engine.feature.research is bought.
-     * @return The created be.yildizgames.engine.feature.research.
+     * @param bonus Bonus received when this research is bought.
+     * @return The created research.
      */
     //@effects Create a new Research with no prerequisite.
     public static Research createAndRegister(final ResearchId id, final float price, final BonusId bonus) {
@@ -84,9 +82,9 @@ public final class Research {
     /**
      * @param id          Research unique id.
      * @param price         Research price.
-     * @param bonus         Bonus received when this be.yildizgames.engine.feature.research is bought.
+     * @param bonus         Bonus received when this research is bought.
      * @param prerequisite  Research needed before buying this one.
-     * @return The created be.yildizgames.engine.feature.research.
+     * @return The created research.
      */
     //@effects Create a new Research with a prerequisite.
     public static Research createAndRegister(final ResearchId id, final float price, final BonusId bonus, final ResearchId prerequisite) {
@@ -94,10 +92,10 @@ public final class Research {
     }
 
     /**
-     * Retrieve a be.yildizgames.engine.feature.research with its unique name.
+     * Retrieve a research with its unique name.
      *
      * @param id Research unique id.
-     * @return The be.yildizgames.engine.feature.research matching to the given name.
+     * @return The research matching to the given name.
      */
     public static Research get(final ResearchId id) {
         return Research.REGISTERER.get(id);
@@ -107,7 +105,7 @@ public final class Research {
         return bonus;
     }
 
-    public ResourceValue getPrice() {
+    public float getPrice() {
         return price;
     }
 
