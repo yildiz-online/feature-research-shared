@@ -24,8 +24,7 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildizgames.common.collection.Maps;
-
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -39,7 +38,7 @@ public final class Research {
     /**
      * Contains all created Research, to check name is unique and to retrieve a Research from its name.
      */
-    private static final Map<ResearchId, Research> REGISTERER = Maps.newMap();
+    private static final Map<ResearchId, Research> REGISTERER = new HashMap<>();
 
     /**
      * Bonus obtained the this research is done.

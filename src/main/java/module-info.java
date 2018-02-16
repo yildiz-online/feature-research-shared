@@ -22,21 +22,16 @@
  *
  */
 
-package be.yildizgames.engine.feature.research;
+module be.yildizgames.feature.research.shared {
+    requires be.yildizgames.common.util;
+    requires be.yildizgames.common.model;
+    requires be.yildizgames.common.logging;
+    requires be.yildizgames.common.mapping;
+    requires be.yildizgames.common.mapping.model;
 
-import be.yildizgames.common.util.ValueObject;
+    requires slf4j.api;
 
-/**
- * @author Grégory Van den Borre
- */
-public class ResearchId extends ValueObject {
-
-    private ResearchId(int value) {
-        super(value);
-    }
-
-    public static ResearchId valueOf(int value) {
-        return new ResearchId(value);
-    }
-
+    exports be.yildizgames.engine.feature.research;
+    exports be.yildizgames.engine.feature.research.protocol;
+    exports be.yildizgames.engine.feature.research.protocol.mapper;
 }

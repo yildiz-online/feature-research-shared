@@ -27,7 +27,7 @@ package be.yildizgames.engine.feature.research;
 import be.yildizgames.common.model.PlayerId;
 
 /**
- * Listener notified when a be.yildizgames.engine.feature.research even occurs.
+ * Listener notified when a research even occurs.
  *
  * @author Grégory Van den Borre
  */
@@ -35,18 +35,18 @@ import be.yildizgames.common.model.PlayerId;
 public interface ResearchListener {
 
     /**
-     * Notify when a be.yildizgames.engine.feature.research is complete.
+     * Notify when a research is complete.
      *
      * @param research Research done.
-     * @param player   Player that completed the be.yildizgames.engine.feature.research.
+     * @param player   Player that completed the be.research.
      */
     void researchCompleted(ResearchId research, PlayerId player);
 
     /**
-     * Notify when a be.yildizgames.engine.feature.research has already been done.
+     * Notify when a research has already been done.
      *
      * @param research Research already done.
-     * @param player   Player trying to make the be.yildizgames.engine.feature.research.
+     * @param player   Player trying to make the research.
      */
     default void researchAlreadyDone(ResearchId research, PlayerId player) {
     }
