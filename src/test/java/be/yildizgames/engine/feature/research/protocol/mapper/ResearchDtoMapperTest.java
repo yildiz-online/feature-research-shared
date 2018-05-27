@@ -34,6 +34,6 @@ import be.yildizgames.engine.feature.research.protocol.ResearchDto;
 public class ResearchDtoMapperTest extends BaseMapperTest<ResearchDto> {
 
     public ResearchDtoMapperTest() {
-        super(ResearchDtoMapper.getInstance(), new ResearchDto(ResearchId.valueOf(3), EntityId.valueOf(4)));
+        super(ResearchDtoMapper.getInstance(), new ResearchDto(ResearchId.valueOf(3)));
     }
 }

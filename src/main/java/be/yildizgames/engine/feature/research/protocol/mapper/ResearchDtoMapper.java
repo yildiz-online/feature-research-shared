@@ -27,7 +27,6 @@ package be.yildizgames.engine.feature.research.protocol.mapper;
 import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.common.mapping.Separator;
-import be.yildizgames.common.mapping.model.EntityIdMapper;
 import be.yildizgames.engine.feature.research.protocol.ResearchDto;
 
 /**
@@ -50,7 +49,7 @@ public class ResearchDtoMapper implements ObjectMapper<ResearchDto> {
         assert s != null;
         String[] v = s.split(Separator.OBJECTS_SEPARATOR);
         try {
-            return new ResearchDto(ResearchIdMapper.getInstance().from(v[0]), EntityIdMapper.getInstance().from(v[1]));
+            return new ResearchDto(ResearchIdMapper.getInstance().from(v[0]));
         } catch (IndexOutOfBoundsException e) {
             throw new MappingException(e);
         }
@@ -59,8 +58,6 @@ public class ResearchDtoMapper implements ObjectMapper<ResearchDto> {
     @Override
     public String to(ResearchDto dto) {
         assert dto != null;
-        return ResearchIdMapper.getInstance().to(dto.research)
-                + Separator.OBJECTS_SEPARATOR
-                + EntityIdMapper.getInstance().to(dto.cityId);
+        return ResearchIdMapper.getInstance().to(dto.research);
     }
 }

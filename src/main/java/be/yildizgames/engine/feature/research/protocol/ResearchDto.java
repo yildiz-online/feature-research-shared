@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.research.protocol;
 
-import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.research.ResearchId;
 
 /**
@@ -34,11 +33,8 @@ public class ResearchDto {
 
     public final ResearchId research;
 
-    public final EntityId cityId;
-
-    public ResearchDto(ResearchId research, EntityId cityId) {
+    public ResearchDto(ResearchId research) {
         this.research = research;
-        this.cityId = cityId;
     }
 
     @Override
@@ -52,13 +48,13 @@ public class ResearchDto {
 
         ResearchDto that = (ResearchDto) o;
 
-        return research.equals(that.research) && cityId.equals(that.cityId);
+        return research.equals(that.research);
     }
 
     @Override
     public int hashCode() {
         int result = research.hashCode();
-        result = 31 * result + cityId.hashCode();
+        result = 31 * result;
         return result;
     }
 }
