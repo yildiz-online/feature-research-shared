@@ -67,7 +67,7 @@ public final class ResearchManager {
      * @param player Player doing the research.
      */
     public void addResearch(final ResearchId res, final PlayerId player) {
-        Set<ResearchId> list = this.researches.computeIfAbsent(player, (PlayerId) -> new HashSet<>());
+        Set<ResearchId> list = this.researches.computeIfAbsent(player, PlayerId -> new HashSet<>());
         if (list.contains(res)) {
             this.listenerList.forEach(l -> l.researchAlreadyDone(res, player));
         } else {
@@ -93,7 +93,7 @@ public final class ResearchManager {
      * @return The state of the given research.
      */
     public ResearchState getResearchState(final PlayerId player, final ResearchId id) {
-        Set<ResearchId> list = this.researches.computeIfAbsent(player, (PlayerId) -> new HashSet<>());
+        Set<ResearchId> list = this.researches.computeIfAbsent(player, PlayerId -> new HashSet<>());
         if (list.contains(id)) {
             return ResearchState.DONE;
         }
@@ -118,7 +118,7 @@ public final class ResearchManager {
      * @return <code>true</code> If the given player has completed to given research.
      */
     public boolean hasResearch(final PlayerId player, final ResearchId res) {
-        return this.researches.computeIfAbsent(player, (PlayerId) -> new HashSet<>()).contains(res);
+        return this.researches.computeIfAbsent(player, PlayerId -> new HashSet<>()).contains(res);
     }
 
     /**
