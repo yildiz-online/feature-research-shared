@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.common.mapping.Separator;
 import org.junit.jupiter.api.Assertions;
@@ -45,26 +44,26 @@ public abstract class BaseMapperTest<T>{
     }
 
     @Test
-    void happyFlow() throws MappingException {
+    void happyFlow() {
         String to = mapper.to(baseObject);
         T from = mapper.from(to);
         Assertions.assertEquals(baseObject, from);
     }
 
     @Test
-    void tooShort() throws MappingException {
+    void tooShort() {
         String to = mapper.to(baseObject);
         if (to.contains(Separator.OBJECTS_SEPARATOR)) {
-            Assertions.assertThrows(MappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.OBJECTS_SEPARATOR))));
+            Assertions.assertThrows(ResearchMappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.OBJECTS_SEPARATOR))));
         } else if (to.contains(Separator.VAR_SEPARATOR)) {
-            Assertions.assertThrows(MappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.VAR_SEPARATOR))));
+            Assertions.assertThrows(ResearchMappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.VAR_SEPARATOR))));
         } else {
-            Assertions.assertThrows(MappingException.class, () -> mapper.from(""));
+            Assertions.assertThrows(ResearchMappingException.class, () -> mapper.from(""));
         }
     }
 
     @Test
-    void fromNull() throws MappingException {
+    void fromNull() {
         Assertions.assertThrows(AssertionError.class, () -> mapper.from(null));
     }
 

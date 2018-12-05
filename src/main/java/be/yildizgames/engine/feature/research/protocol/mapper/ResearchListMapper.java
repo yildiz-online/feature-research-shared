@@ -26,7 +26,6 @@ package be.yildizgames.engine.feature.research.protocol.mapper;
 
 
 import be.yildizgames.common.mapping.CollectionMapper;
-import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.engine.feature.research.ResearchId;
 
@@ -51,7 +50,7 @@ public class ResearchListMapper implements ObjectMapper<Collection<ResearchId>> 
 
 
     @Override
-    public Collection<ResearchId> from(String s) throws MappingException {
+    public Collection<ResearchId> from(String s) {
         return mapper.from(s);
     }
 

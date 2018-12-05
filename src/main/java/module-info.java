@@ -28,6 +28,7 @@ module be.yildizgames.feature.research.shared {
     requires be.yildizgames.common.logging;
     requires be.yildizgames.common.mapping;
     requires be.yildizgames.common.mapping.model;
+    requires be.yildizgames.common.exception;
 
     requires slf4j.api;
 

@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.engine.feature.research.ResearchId;
 
@@ -44,12 +43,12 @@ class ResearchIdMapper implements ObjectMapper<ResearchId> {
     }
 
     @Override
-    public ResearchId from(String s) throws MappingException {
+    public ResearchId from(String s) {
         assert s != null;
         try {
             return ResearchId.valueOf(Integer.parseInt(s));
         } catch (final NumberFormatException nfe) {
-            throw new MappingException(nfe);
+            throw new ResearchMappingException(nfe);
         }
     }
 

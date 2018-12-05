@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildizgames.common.mapping.MappingException;
 import be.yildizgames.common.mapping.ObjectMapper;
 import be.yildizgames.common.mapping.Separator;
 import be.yildizgames.engine.feature.research.protocol.ResearchDto;
@@ -45,13 +44,13 @@ public class ResearchDtoMapper implements ObjectMapper<ResearchDto> {
     }
 
     @Override
-    public ResearchDto from(String s) throws MappingException {
+    public ResearchDto from(String s) {
         assert s != null;
         String[] v = s.split(Separator.OBJECTS_SEPARATOR);
         try {
             return new ResearchDto(ResearchIdMapper.getInstance().from(v[0]));
         } catch (IndexOutOfBoundsException e) {
-            throw new MappingException(e);
+            throw new ResearchMappingException(e);
         }
     }
 
