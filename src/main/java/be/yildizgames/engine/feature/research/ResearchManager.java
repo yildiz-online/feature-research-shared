@@ -24,9 +24,9 @@
 
 package be.yildizgames.engine.feature.research;
 
-import be.yildizgames.common.logging.LogFactory;
 import be.yildizgames.common.model.PlayerId;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,7 +41,7 @@ import java.util.Set;
  */
 public final class ResearchManager {
 
-    private static final Logger LOGGER = LogFactory.getInstance().getLogger(ResearchManager.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ResearchManager.class);
 
     private static final ResearchManager INSTANCE = new ResearchManager();
 
