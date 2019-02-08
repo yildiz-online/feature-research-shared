@@ -33,19 +33,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Grégory Van den Borre
  */
-class ResearchManagerTest {
+public class ResearchManagerTest {
 
     @Nested
-    class GetResearchState {
+    public class GetResearchState {
 
         @Test
-        void done() {
+        public void done() {
             ResearchManager.getInstance().addResearch(ResearchId.valueOf(1), PlayerId.valueOf(1));
             assertEquals(ResearchManager.ResearchState.DONE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(1), ResearchId.valueOf(1)));
         }
 
         @Test
-        void noPrerequisite() {
+        public void noPrerequisite() {
             Research.createAndRegister(ResearchId.valueOf(2),10, BonusId.valueOf(1));
             assertEquals(ResearchManager.ResearchState.AVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(2), ResearchId.valueOf(2)));
         }
@@ -56,7 +56,7 @@ class ResearchManagerTest {
         }
 
         @Test
-        void prerequisiteDone() {
+        public void prerequisiteDone() {
             Research.createAndRegister(ResearchId.valueOf(4),10, BonusId.valueOf(1));
             Research.createAndRegister(ResearchId.valueOf(5),10, BonusId.valueOf(1), ResearchId.valueOf(4));
             ResearchManager.getInstance().addResearch(ResearchId.valueOf(4), PlayerId.valueOf(5));
@@ -64,7 +64,7 @@ class ResearchManagerTest {
         }
 
         @Test
-        void prerequisiteNotDone() {
+        public void prerequisiteNotDone() {
             Research.createAndRegister(ResearchId.valueOf(6),10, BonusId.valueOf(1));
             Research.createAndRegister(ResearchId.valueOf(7),10, BonusId.valueOf(1), ResearchId.valueOf(6));
             assertEquals(ResearchManager.ResearchState.UNAVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(6), ResearchId.valueOf(7)));

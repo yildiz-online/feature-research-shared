@@ -44,14 +44,14 @@ public abstract class BaseMapperTest<T>{
     }
 
     @Test
-    void happyFlow() {
+    public void happyFlow() {
         String to = mapper.to(baseObject);
         T from = mapper.from(to);
         Assertions.assertEquals(baseObject, from);
     }
 
     @Test
-    void tooShort() {
+    public void tooShort() {
         String to = mapper.to(baseObject);
         if (to.contains(Separator.OBJECTS_SEPARATOR)) {
             Assertions.assertThrows(ResearchMappingException.class, () -> mapper.from(to.substring(0, to.indexOf(Separator.OBJECTS_SEPARATOR))));
@@ -63,12 +63,12 @@ public abstract class BaseMapperTest<T>{
     }
 
     @Test
-    void fromNull() {
+    public void fromNull() {
         Assertions.assertThrows(AssertionError.class, () -> mapper.from(null));
     }
 
     @Test
-    void toNull() {
+    public void toNull() {
         Assertions.assertThrows(AssertionError.class, () -> mapper.to(null));
     }
 
