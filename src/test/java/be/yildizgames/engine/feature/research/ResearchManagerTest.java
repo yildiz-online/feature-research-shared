@@ -51,8 +51,8 @@ public class ResearchManagerTest {
         }
 
         @Test
-        void noPrerequisiteUnregistered() {
-            //assertEquals(ResearchManager.ResearchState.UNAVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(3), ResearchId.valueOf(3)));
+        public void noPrerequisiteUnregistered() {
+            assertEquals(ResearchManager.ResearchState.UNAVAILABLE, ResearchManager.getInstance().getResearchState(PlayerId.valueOf(3), ResearchId.valueOf(3)));
         }
 
         @Test
