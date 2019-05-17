@@ -39,4 +39,5 @@ public class BonusId extends ValueObject {
     public static BonusId valueOf(final int value) {
         return new BonusId(value);
     }
+
 }
