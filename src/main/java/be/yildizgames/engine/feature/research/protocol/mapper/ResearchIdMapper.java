@@ -43,7 +43,7 @@ class ResearchIdMapper implements ObjectMapper<ResearchId> {
     }
 
     @Override
-    public ResearchId from(String s) {
+    public final ResearchId from(String s) {
         assert s != null;
         try {
             return ResearchId.valueOf(Integer.parseInt(s));
@@ -53,7 +53,7 @@ class ResearchIdMapper implements ObjectMapper<ResearchId> {
     }
 
     @Override
-    public String to(ResearchId id) {
+    public final String to(ResearchId id) {
         assert id != null;
         return String.valueOf(id.value);
     }

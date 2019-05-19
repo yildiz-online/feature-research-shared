@@ -49,5 +49,6 @@ public interface ResearchListener {
      * @param player   Player trying to make the research.
      */
     default void researchAlreadyDone(ResearchId research, PlayerId player) {
+        //Does nothing.
     }
 }

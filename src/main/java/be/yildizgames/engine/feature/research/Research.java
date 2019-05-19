@@ -101,15 +101,15 @@ public final class Research {
     }
 
     public BonusId getBonus() {
-        return bonus;
+        return this.bonus;
     }
 
     public float getPrice() {
-        return price;
+        return this.price;
     }
 
     public ResearchId getId() {
-        return id;
+        return this.id;
     }
 
     public Optional<ResearchId> getPrerequisite() {

@@ -33,6 +33,7 @@ import be.yildizgames.engine.feature.research.protocol.ResearchDto;
  */
 public class ResearchDtoMapper implements ObjectMapper<ResearchDto> {
 
+
     private static final ResearchDtoMapper INSTANCE = new ResearchDtoMapper();
 
     private ResearchDtoMapper() {

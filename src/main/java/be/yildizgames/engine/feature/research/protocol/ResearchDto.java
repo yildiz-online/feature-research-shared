@@ -57,4 +57,5 @@ public class ResearchDto {
         result = 31 * result;
         return result;
     }
+
 }

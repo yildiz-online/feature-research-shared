@@ -28,3 +28,4 @@
  * @author Grégory Van den Borre
  */
 package be.yildizgames.engine.feature.research;
+

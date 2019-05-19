@@ -34,4 +34,5 @@ public class ResearchIdMapperTest extends BaseMapperTest<ResearchId> {
     public ResearchIdMapperTest() {
         super(ResearchIdMapper.getInstance(), ResearchId.valueOf(4));
     }
+
 }

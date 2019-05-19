@@ -35,4 +35,5 @@ public class ResearchDtoMapperTest extends BaseMapperTest<ResearchDto> {
     public ResearchDtoMapperTest() {
         super(ResearchDtoMapper.getInstance(), new ResearchDto(ResearchId.valueOf(3)));
     }
+
 }

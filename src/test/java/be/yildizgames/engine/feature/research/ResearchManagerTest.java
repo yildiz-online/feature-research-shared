@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class ResearchManagerTest {
 
+
     @Nested
     public class GetResearchState {
 

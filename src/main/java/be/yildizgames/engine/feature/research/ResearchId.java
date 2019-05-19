@@ -38,5 +38,4 @@ public class ResearchId extends ValueObject {
     public static ResearchId valueOf(int value) {
         return new ResearchId(value);
     }
-
 }

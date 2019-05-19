@@ -73,11 +73,11 @@ public interface Prerequisite {
         }
 
         public boolean isFilled() {
-            return filled;
+            return this.filled;
         }
 
         public String getCause() {
-            return cause;
+            return this.cause;
         }
     }
 }

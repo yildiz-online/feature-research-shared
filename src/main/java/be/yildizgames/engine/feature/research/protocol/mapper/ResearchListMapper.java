@@ -50,12 +50,12 @@ public class ResearchListMapper implements ObjectMapper<Collection<ResearchId>> 
 
 
     @Override
-    public Collection<ResearchId> from(String s) {
-        return mapper.from(s);
+    public final Collection<ResearchId> from(String s) {
+        return this.mapper.from(s);
     }
 
     @Override
-    public String to(Collection<ResearchId> dto) {
-        return mapper.to(dto);
+    public final String to(Collection<ResearchId> dto) {
+        return this.mapper.to(dto);
     }
 }
