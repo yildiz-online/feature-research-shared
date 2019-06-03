@@ -30,8 +30,6 @@ module be.yildizgames.feature.research.shared {
     requires be.yildizgames.common.mapping.model;
     requires be.yildizgames.common.exception;
 
-    requires slf4j.api;
-
     exports be.yildizgames.engine.feature.research;
     exports be.yildizgames.engine.feature.research.protocol;
     exports be.yildizgames.engine.feature.research.protocol.mapper;

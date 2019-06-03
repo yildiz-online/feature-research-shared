@@ -24,6 +24,8 @@
 
 package be.yildizgames.engine.feature.research;
 
+import be.yildizgames.common.model.BonusId;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

@@ -24,6 +24,7 @@
 
 package be.yildizgames.engine.feature.research;
 
+import be.yildizgames.common.model.BonusId;
 import be.yildizgames.common.model.PlayerId;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
