@@ -23,11 +23,9 @@
  */
 
 module be.yildizgames.feature.research.shared {
-    requires be.yildizgames.common.util;
     requires be.yildizgames.common.model;
     requires be.yildizgames.common.mapping;
     requires be.yildizgames.common.mapping.model;
-    requires be.yildizgames.common.exception;
 
     exports be.yildizgames.engine.feature.research;
     exports be.yildizgames.engine.feature.research.protocol;

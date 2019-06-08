@@ -1,11 +1,9 @@
 package be.yildizgames.engine.feature.research.protocol.mapper;
 
-import be.yildizgames.common.exception.business.BusinessException;
-
 /**
  * @author Grégory Van den Borre
  */
-class ResearchMappingException extends BusinessException {
+class ResearchMappingException extends IllegalArgumentException {
 
     ResearchMappingException(String message) {
         super(message);
